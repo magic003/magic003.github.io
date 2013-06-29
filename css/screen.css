@@ -72,7 +72,41 @@ a:hover {
     margin-right: 5px;
     margin-left: 5px;
 }
+
+#container {
+    margin: 0 auto;
+    width: 900px;
+    padding-top: 40px;
+}
+
+#content {
+    padding: 20px 50px 100px 50px;
+}
+
 /* Home */
 
+#posts li {
+    list-style-type: none;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 7px 5px;
+    line-height: 160%;
+}
+
+#posts li .date {
+    color: #777777;
+    float: right;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-top: 3px;
+}
+
+#posts li a {
+    color: black;
+    font-size: 20px;
+}
+
+#posts li a:hover {
+    color: red;
+}
 /* Posts */
 
