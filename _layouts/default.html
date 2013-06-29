@@ -12,6 +12,8 @@
 
     <title>{{ page.title }}</title>
 
+    <!-- PT Serif font -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'/>
     <!-- Rest styles for html 5 elements -->
     <link rel="stylesheet" href="/css/html5reset.css" type="text/css"/>
 
@@ -19,6 +21,22 @@
 
   </head>
   <body>
+    <div id="header">
+      <section id="name">
+        <a href="/">MINJIE<span>ZHA</span></a>
+      </section>
+      <nav>
+        <ul>
+          <li>
+            <a href="/about.html">ABOUT</a>
+            |
+          </li>
+          <li>
+            <a href="/projects.html">PROJECTS</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     {{ content }}
   </body>
 </html>
