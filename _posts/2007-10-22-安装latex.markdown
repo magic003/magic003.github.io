@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "安装latex"
+date:   2007-10-22 22:12:00
+categories: tech
+---
+
+在kubuntu7.10下安装latex套件。使用命令：
+
+<pre class="console">
+sudo apt-get install tetex-bin tetex-base
+</pre>
+
+来安装latex相关的套件。执行如上命令后会提示还需要安装其他一些包，例如与texlive相关的包，选择`yes`，并完成安装。
+
+运行一个`helloworld`来测试是否安装成功。创建文件`hello.tex`，内容如下：
+
+{% highlight latex linenos %}
+\documentclass{article}
+
+\begin{document}
+Hello World!
+\end{document}
+{% endhighlight %}
+
+然后执行：
+
+<pre class="console">
+pdflatex hello.tex
+</pre>
+
+此时会生成`hello.aux`，`hello.log`，`hello.pdf`等文件，打开`hello.pdf`，如显示正常，表明安装成功。

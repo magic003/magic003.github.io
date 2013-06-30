@@ -5,7 +5,7 @@ date:   2007-10-22 12:05:00
 categories: tech
 ---
 
-kubuntu7.10已经发布了4天，今天终于把我的系统从7.06升级到了7.10。据说sudo apt-get dist-upgrade不能保证成功升级，应该使用
+kubuntu7.10已经发布了4天，今天终于把我的系统从7.06升级到了7.10。据说`sudo apt-get dist-upgrade`不能保证成功升级，应该使用
 
 <pre class="console">
 sudo apt-get install update-manager-core
