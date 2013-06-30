@@ -5,7 +5,7 @@ date:   2007-11-25 21:29:00
 categories: tech
 ---
 
-首先要感谢Yufei告诉并帮助我配置了支持UTF-8编码的中文环境。本文在“[kubuntu710下配置latex中文环境]{% post_url 2007-10-23-kubuntu7.10下配置latex中文环境 %}”的基础上进行了些修改。
+首先要感谢Yufei告诉并帮助我配置了支持UTF-8编码的中文环境。本文在“kubuntu7.10下配置latex中文环境{% post_url 2007-10-23-kubuntu7.10下配置latex中文环境 %}”的基础上进行了些修改。
 
 1. 安装texlive和cjk-latex的方法不再多说，如下：
 
