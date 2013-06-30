@@ -30,6 +30,10 @@ h2 {
     line-height: 120%;
 }
 
+code {
+    font-family: Courier, monospace;
+}
+
 /* Site */
 #header {
     background-color: black;
@@ -184,6 +188,6 @@ h2 {
 .console {
     color: white;
     background-color: black;
-    font-family: 'Courier New', Courier, Helvetica;
+    font-family: Courier, monospace;
     padding: 10px;
 }
