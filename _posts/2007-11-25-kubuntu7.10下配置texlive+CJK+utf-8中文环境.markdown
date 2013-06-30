@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  "kubuntu7.10下配置latex中文环境"
-date:   2007-10-23 20:38:00
+title:  "kubuntu7.10下配置texlive + CJK + UTF-8中文环境"
+date:   2007-11-25 21:29:00
 categories: tech
 ---
 
-之前已经安装好了latex，现在对其进行配置，使latex支持中文。
+首先要感谢Yufei告诉并帮助我配置了支持UTF-8编码的中文环境。本文在“[kubuntu710下配置latex中文环境]{% post_url 2007-10-23-kubuntu7.10下配置latex中文环境 %}”的基础上进行了些修改。
 
-1. 为了支持中文，需要安装cjk-latex包，使用命令：
+1. 安装texlive和cjk-latex的方法不再多说，如下：
 
     <pre class="console">
+    sudo apt-get install texlive
     sudo apt-get install cjk-latex</pre>
 
 2. 在`home`目录下创建目录`.texmf`，修改`/etc/texmf/texmf.cnf`，设置`TEXMFHOME`的值，如`TEXMFHOME = $HOME/.texmf`。
@@ -23,15 +24,15 @@ categories: tech
 
 3. 在`$HOME/texmf`下创建`zh_CN`目录，并将`windows（C:/WINDOWS/Fonts/）`下的字体文件（`SIM*`,`sim*`）拷贝到`zh_CN`目录下。字体文件可以存放在任意位置。
 
-4. 下载gbkfonts文件，并使用如下命令转换字体格式：
+4. 下载[mkutf8cjkfonts.txt](http://cyfdecyf.googlepages.com/mkutf8cjkfonts.txt)文件，修改起后缀名为`sh`，并使用如下命令转换字体格式为`UTF-8`支持的字体（此脚本需要用到程序`ttf2pt1`，使用`apt-get`安装即可）：
 
     <pre class="console">
-    ./gbkfonts zh_CN/SIMLI.TTF li
-    ./gbkfonts zh_CN/SIMYOU.TTF you
-    ./gbkfonts zh_CN/simsun.ttc song
-    ./gbkfonts zh_CN/simfang.ttf fang
-    ./gbkfonts zh_CN/simkai.ttf kai
-    ./gbkfonts zh_CN/simhei.ttf hei
+    sh mkutf8cjkfonts.sh zh_CN/SIMLI.TTF li li
+    sh mkutf8cjkfonts.sh zh_CN/SIMYOU.TTF you you
+    sh mkutf8cjkfonts.sh zh_CN/simsun.ttc song song
+    sh mkutf8cjkfonts.sh zh_CN/simfang.ttf fang fang
+    sh mkutf8cjkfonts.sh zh_CN/simkai.ttf kai kai
+    sh mkutf8cjkfonts.sh zh_CN/simhei.ttf hei hei
     mktexlsr</pre>
 
 5. 让latex识别安装的字体：
@@ -45,17 +46,19 @@ categories: tech
 6. 最后，编写`hello.tex`来测试是否配置成功，内容如下：
     {% highlight latex linenos %}
 \documentclass{article}
-\usepackage{CJK}
+\usepackage{CJKutf8}
 
 \begin{document}
-\begin{CJK}{GBK}{song}
+\begin{CJK}{UTF8}{song}
 你好
 \end{CJK}
 \end{document}{% endhighlight %}
 
-    一定要将文件保存为`GBK`编码，latex不支持`UTF-8`编码的中文字符。生成pdf文件：
+    一定要`usepackage{CJKutf8}`,并且在CJK环境中指定使用UTF8编码。生成pdf文件：
 
     <pre class="console">
     pdflatex hello.tex</pre>
 
     打开`hello.pdf`，如果显示正常，表明配置成功。
+
+
