@@ -185,6 +185,10 @@ code {
     margin: 20px 0;
 }
 
+.post_body ul, .post_body ol {
+    margin-left: 20px;
+}
+
 .console {
     color: white;
     background-color: black;
