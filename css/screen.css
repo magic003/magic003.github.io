@@ -25,6 +25,11 @@ a:hover {
     color: red;
 }
 
+h2 {
+    font-size: 36px;
+    line-height: 120%;
+}
+
 /* Site */
 #header {
     background-color: black;
@@ -154,5 +159,25 @@ a:hover {
 #posts li a:hover {
     color: red;
 }
+
 /* Posts */
+.post .date {
+    font-size: 16px;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: right;
+}
+
+.post_body {
+    background-image: url("/images/ornament1.png");
+    background-repeat: repeat-x;
+    padding: 20px 0;
+    font-size: 17px;
+    line-height: 150%;
+}
+
+.post_body p {
+    margin: 20px 0;
+}
 
