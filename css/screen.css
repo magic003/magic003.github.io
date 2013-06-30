@@ -189,6 +189,19 @@ code {
     margin-left: 20px;
 }
 
+.post_body blockquote {
+    margin-left: 30px;
+}
+
+.post_body img {
+    display: block;
+    margin: 0 auto;
+}
+
+.post_body .caption {
+    text-align: center;
+}
+
 .console {
     color: white;
     background-color: black;
