@@ -181,3 +181,9 @@ h2 {
     margin: 20px 0;
 }
 
+.console {
+    color: white;
+    background-color: black;
+    font-family: 'Courier New', Courier, Helvetica;
+    padding: 10px;
+}
