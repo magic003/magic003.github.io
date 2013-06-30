@@ -83,6 +83,52 @@ a:hover {
     padding: 20px 50px 100px 50px;
 }
 
+#footer {
+    background-image: url("/images/ornament1.png");
+    background-repeat: repeat-x;
+    padding: 30px 50px;
+    text-align: center;
+}
+
+#footer a {
+    display: inline-block;
+    width: 200px;
+}
+
+#footer a:hover {
+    color: black;
+}
+
+#footer .social_icon {
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding: 52px 10px 10px;
+}
+
+#footer .rss {
+    background-image: url("/images/rss_grey.png");
+}
+
+#footer a:hover .rss {
+    background-image: url("/images/rss_black.png");
+}
+
+#footer .github {
+    background-image: url("/images/github_grey.png");
+}
+
+#footer a:hover .github {
+    background-image: url("/images/github_black.png");
+}
+
+#footer .twitter {
+    background-image: url("/images/twitter_grey.png");
+}
+
+#footer a:hover .twitter {
+    background-image: url("/images/twitter_black.png");
+}
+
 /* Home */
 
 #posts li {
