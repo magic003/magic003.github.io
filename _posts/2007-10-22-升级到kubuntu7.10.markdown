@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "升级到kubuntu7.10"
+date:   2007-10-22 12:05:00
+categories: tech
+---
+
+kubuntu7.10已经发布了4天，今天终于把我的系统从7.06升级到了7.10。据说sudo apt-get dist-upgrade不能保证成功升级，应该使用
+
+<pre class="console">
+sudo apt-get install update-manager-core
+sudo do-release-upgrade
+</pre>
+
+升级到最后的时候，报了几个跟tetex相关的错误，是latex引起的。重启之后发现两个重要的问题，一个是使用beryl或compiz窗口管理器时，窗口的边框无法显示，最近一直嫌beryl把我的机器托慢了，所以干脆就删除了beryl的相关组件，只用kwin窗口管理器。第二个是kopete无法登录，每次都是报crashed的错误。下载了[kdelibs4c2a_3.5.8-0ubuntu3_i386.deb]()（对于amd64使用[kdelibs4c2a_3.5.8-0ubuntu2_amd64.deb](http://kubuntu.org/%7Ejriddell/kdelibs4c2a_3.5.8-0ubuntu2_amd64.deb)）fix package，使用
+
+<pre class="console">
+sudo dpkg -i kdelibs4c2a_3.5.8-0ubuntu3_i385.deb
+</pre>
+
+安装后kopete就正常了。
+现在还没发现别的问题，感觉速度好像更快了，而且窗口的色调比以前更亮，不过好像没有特别令人兴奋的改变。
