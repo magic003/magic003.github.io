@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "升级到kubuntu8.04"
+date:   2008-04-27 11:39:00
+categories: tech
+---
+
+期盼已久的8.04终于在24号发布了。原本想过一个星期，等源稳定了，再看看别人升级有没有什么问题，自己再更新的，因为一天到晚都要用电脑的，万一出个什么问题影响学习就不好了。结果今天早上起来再也忍不住了，就一咬牙开始升级了。
+
+Kubuntu8.04有两个版本，一个是KDE3的，这个是官方支持的，另一个是KDE4的remix版，是由Kubuntu社区支持的，因为KDE4下的软件还不多，很多软件都在移植到KDE4下，所以要到8.10的时候官方才会使用KDE4。所以我还是选择了KDE3的版本。
+
+升级过程是按照kubuntu.org上的upgrade方法进行。周末学院的网络果然不错，用的是上海交大的源，速度很快，平均速度应该在2M/s，不到十分钟就下好了更新软件包。升级过程也很顺利，除了报了几次x11-common，xorg的错误外，其他都是一次完成。这个问题我在升级后，更新了一下系统，就解决了。
+
+总的来说，Kubuntu8.04没有太多令人兴奋的新特性，开关机速度还是差不多，界面上的边框和进度条之类的稍微美观了一点。到目前为止我发现的主要变化有：
+
+1. 新加入的文件浏览器Dolphin，觉得速度要比Konqueror快一些，界面也简洁许多，我很喜欢，现在就用这个了。
+2. Firefox升级到了3 Beta 5，由于我用的本来就是英文版，所以没有遇到网友所说的无法显示简体中文的问题。但最大的问题是add-ons不兼容，tab mix plus，del.icio.us等还没有Firefox3的版本，幸好DownThemAll已经更新了，所以先凑合着用吧。
+3. 换上了WenQuanYi Zen Hei字体。在7.10的时候，我就尝试过正黑字体，但是对于小号字体，明显发虚，所以又删除了。在8.04下又试了一次，效果好很多了，虽然对于特别小的字体还是有发虚的现象，但是大多数情况下都很正常，字体也挺好看的，唯一不足的地方就是字体的锯齿还是有点明显。
+
+有图为证：
+
+![Dolphin File Manager](https://lh5.googleusercontent.com/-ezLvU1OyDQ4/SBP9EpFrMDI/AAAAAAAAAX4/lx8hVhUcNGc/s720/dolphin.png)
+
+<div class="caption">
+Dolphin File Manager
+</div>
+
+![Firefox 3 Beta 5](https://lh6.googleusercontent.com/-i2jIxW9m6Mc/SBP9S5FrMEI/AAAAAAAAAYA/0oZPykB_C8s/s640/ff3.png)
+
+<div class="caption">
+Firefox 3 Beta 5
+</div>
