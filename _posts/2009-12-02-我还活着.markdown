@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "我还活着"
+date:   2009-12-02 12:40:00
+categories: life
+---
+
+现在翻墙是越来越难了，Web代理碰到blogger就不管用了，免费VPN也越来越难找。于是我写写文章这个小小的爱好也只能为共产专制主义作出牺牲了。近日，听闻利用Opera Mini可以翻墙，于是欣然决定一试。参考文章：[http://code.google.com/p/opera-mini-on-desktop/](http://code.google.com/p/opera-mini-on-desktop/)。历时一个晚上和一个上午，把遇到的一些小问题都解决了。终于可以登录blogger了，不过MicroEmulator中无法输入中文，所以翻墙后也就只能作为浏览之用了。不知道此翻墙方式能维持多久。虽然过程十分复杂，但是总算没白折腾，因为"道路是曲折的，前途是光明的"，就好像短暂的专制复辟是无法阻挡民主共和的脚步。
+
+登录blogger后设置了mail2blogger，以前没用过，以后估计只能用这种方式了，不知道格式显示会不会有问题。
+
+庆幸的是，在被组织fuck了24年之后，我惊喜的发现我还活着。
+
+是的，我还活着！
