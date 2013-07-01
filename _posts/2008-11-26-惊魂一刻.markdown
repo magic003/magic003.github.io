@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "惊魂一刻"
+date:   2008-11-26 23:32:00
+categories: tech
+---
+
+Kubuntu 8.10发布快一个月了，因为担心升级后会出现问题影响日常使用，所以一直使用着经典的KDE 3.8。上周末终于禁不住诱惑，狠下心升级到了8.10。升级过程非常顺利，没有出现任何问题。虽然KDE 4谈不上“惊艳”，但我还是挺喜欢的，界面设计很精致，很professinal，特别喜欢新的Konsole，默认的配色很漂亮。唯一有问题的是播放器，无论是mplayer，smplayer，还是kaffeine，打开视频文件后，都会导致黑屏，就只能重启系统了。kaffeine有50%的可能出错，而mplayer和smplayer几乎每次都会出错。由于kaffeine还没有KDE 4的版本，现在我使用的还是KDE 3的版本，所以也可以理解。
+
+使用的这几天，每天播放视频都会黑屏，所以今天黑屏后，依然如往常强行关机、重启。这次重启时在check `/home`分区时出错了，提示需要手动运行fsck。以前也遇到类似的问题，就顺手运行：
+
+<pre class="console">
+$ fsck
+</pre>
+
+啊！忘记指定分区了，这样就去check主分区了，直接导致了主分区损坏，重启后grub报`error 17`错误，无法进入系统了。
+
+不急不急！我有Live CD。运行Live CD后就开始google了。看了“[Grub Error 17 问题之简单解决](http://blog.csdn.net/wadefelix/archive/2007/12/21/1956954.aspx)“后心想可以解决了。可是运行find命令的时候，又报出grub `error 15`的错误。搜出来的解决方案也很多，进入`/boot`查看内核文件之类的，这时我发现了问题的所在。在使用如下命令`mount`主分区时，提示这是不正确的文件系统类型，而同样的做法`mount /home`分区却是成功的。
+
+<pre class="console">
+$ sudo mount -t ext3 /dev/sda1 /media
+</pre>
+
+由此可见，一定是刚才的`fsck`导致`/dev/sda1`上的文件系统损坏了。又google了一下，几个帖子都说他们最后的解决方法都是重装系统。这时心里一惊，真的要重装吗？订的Kubuntu 8.10的盘还没到，手头又只有7.10的盘。刹那间，一个念头闪过，何不用fsck再修复一下/dev/sda1呢？
+
+<pre class="console">
+$ sudo fsck -y /dev/sda1
+</pre>
+
+这下系统能启动了，再用`fsck`修复一下`/home`分区就OK了。
+
+<pre class="console">
+$ fsck /dev/sda5
+</pre>
+
+一个小时后，又重新进入系统了。一个误操作导致了虚惊一场，不过还是希望能快点解决播放视频黑屏的问题，这样我也不用整天强行关机了。
