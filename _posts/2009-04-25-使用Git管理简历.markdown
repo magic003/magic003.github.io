@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "使用Git管理简历"
+date:   2009-04-25 10:46:00
+categories: tech
+---
+
+每到找实习找工作的时候，做得最多的一件事就是修改简历了。随着个人经历的增长，简历的内容也会不断丰富。即便在同一个时期，对于一个有针对性的应聘者来说，投向不同公司的简历会因为职位要求而有所不同。有什么方法来管理这些简历呢？最笨拙的办法就是为每一份简历保留一个备份，以备日后查看和修改。久而久之，备份的文件会越来越多。其实，简历跟代码一样，也会有版本的变化，所以可以使用[Git](http://git-scm.com/)来进行管理。
+
+我的简历使用latex排版，使用一个模板，每次只是去修改内容，然后运行pdflatex生成PDF文件。首先，初始化git repository，并把tex源文件加入版本控制之中。
+
+<pre class="console">
+$ git init
+$ git add resume.tex
+$ git commit
+</pre>
+
+修改完`resume.tex`后，可以将修改提供到版本库：
+
+<pre class="console">
+$ git add resume.tex
+$ git commit
+</pre>
+
+如果此时的版本是用于提交的简历，则可为其设置tag，以备日后查看：
+
+<pre class="console">
+$ git tag XXX HEAD
+$ git tag
+XXX
+</pre>
+
+`XXX`是自己为tag设置的名称，比如可以设为某公司某职位的名称。命令`git tag`用来查看所有的tag。
+
+经过多次修改后，简历经历了多个版本的变更，这时如果需要查看以前某个tag的版本，可以以此tag为基础创建一个branch，命名为old：
+
+<pre class="console">
+$ git branch old XXX
+$ git branch
+* master
+old
+</pre>
+
+此时，branch old已经被创建，但是版本还是最新的版本，只需切换到branch old即可看到tag `XXX`的内容。
+
+<pre class="console">
+$ git checkout old
+</pre>
+
+此时`resume.tex`就回到了创建tag时的版本，运行`pdflatex`，就可以查看当时提交的简历内容了。
+
+查看完当时的简历，如果不需要了，可以删除branch：
+
+<pre class="console">
+$ git branch -D old
+</pre>
+
+对于HTML，Word格式的简历也可以使用相同的方法进行管理。
+
