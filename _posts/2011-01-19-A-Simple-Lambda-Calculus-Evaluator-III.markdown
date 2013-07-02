@@ -5,7 +5,7 @@ date:   2011-01-19 18:19:00
 categories: tech
 ---
 
-In the [previous](/tech/2011/01/19/A-Simple-Lambda-Calculus-Evaluator-II.html) post, we translated the lambda calculus expressions into a syntax tree using some compiler generate tools. Now, we are about to evaluate it by traversing the syntax tree. First, I will introduce the evaluation algorithm in this post. Then, the implementation is presented along with some code snippet. Finally, an interactive interface which combines all the parts together is implemented. The full source code can be checkout [here](https://github.com/magic003/lambda_calculus_evaluator).
+In the [previous](/tech/2011/01/18/A-Simple-Lambda-Calculus-Evaluator-II.html) post, we translated the lambda calculus expressions into a syntax tree using some compiler generate tools. Now, we are about to evaluate it by traversing the syntax tree. First, I will introduce the evaluation algorithm in this post. Then, the implementation is presented along with some code snippet. Finally, an interactive interface which combines all the parts together is implemented. The full source code can be checkout [here](https://github.com/magic003/lambda_calculus_evaluator).
 
 ### Evaluation Algorithm
 
@@ -29,7 +29,7 @@ evaluate(tree):
         return tree;
 </pre>
 
-Now, the problem is reduced to the beta-reduction of a lambda calculus expression. In the [first post](/tech/2011/01/18/A-Simple-Lambda-Calculus-Evaluator-I.html), we learned that the beta-reduction can be simple defined in terms of substitution, so again our problem is reduced to implement the substitution algorithm of expressions. We can simply derive a recursive algorithm from the substitution rules defined in the [first post](/tech/2011/01/18/A-Simple-Lambda-Calculus-Evaluator-I.html):
+Now, the problem is reduced to the beta-reduction of a lambda calculus expression. In the [first post](/tech/2011/01/17/A-Simple-Lambda-Calculus-Evaluator-I.html), we learned that the beta-reduction can be simple defined in terms of substitution, so again our problem is reduced to implement the substitution algorithm of expressions. We can simply derive a recursive algorithm from the substitution rules defined in the [first post](/tech/2011/01/17/A-Simple-Lambda-Calculus-Evaluator-I.html):
 
 <pre class="console">
 substitute(tree, var, sub):
@@ -52,7 +52,7 @@ substitute(tree, var, sub):
 
 Pay attention to the abstraction node case, we check the conditions in the last rule. If the condition is not met, an alpha-reduction is applied to the syntax tree before doing substitution.
 
-There are two remaining problems: alpha-conversion and free variables. The definition of free variables in the [first post](/tech/2011/01/18/A-Simple-Lambda-Calculus-Evaluator-I.html) is very straightforward, so I won't duplicate the algorithm here. With regard to alpha-conversion, the process consists of the following steps:
+There are two remaining problems: alpha-conversion and free variables. The definition of free variables in the [first post](/tech/2011/01/17/A-Simple-Lambda-Calculus-Evaluator-I.html) is very straightforward, so I won't duplicate the algorithm here. With regard to alpha-conversion, the process consists of the following steps:
 
 > 1. Find the set of free variables of the expression child node;
 > 2. Pick a new identifier name which is different from the old one and not in the free variable set in step 1;
@@ -261,7 +261,7 @@ Press Ctrl+C to quit.
 
 ### Conclusion
 
-This [series](/tech/2011/01/18/A-Simple-Lambda-Calculus-Evaluator-I.html) of post introduces how to write a very simple evaluator for lambda calculus. It covers the topics about scanner, parser and evaluator. In order to keep it really pure, there are some limitations of the syntax, such as not constant support, cannot place parentheses around expressions to change the evaluation order from left to right. However, it is rather easy to support those features by extending the syntax. We can do it in the future.
+This [series](/tech/2011/01/17/A-Simple-Lambda-Calculus-Evaluator-I.html) of post introduces how to write a very simple evaluator for lambda calculus. It covers the topics about scanner, parser and evaluator. In order to keep it really pure, there are some limitations of the syntax, such as not constant support, cannot place parentheses around expressions to change the evaluation order from left to right. However, it is rather easy to support those features by extending the syntax. We can do it in the future.
 
 ### References
 
