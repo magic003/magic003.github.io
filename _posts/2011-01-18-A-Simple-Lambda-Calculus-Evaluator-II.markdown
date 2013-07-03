@@ -191,4 +191,4 @@ expression      : ID
 
 For that last rule, we add a semantic action inside the rule, as a result a temporary node which represents the ID expression will be created by Bison. So the index number should be `4` and `5` instead of `3` and `4` in the last semantic action, which may confuse beginners of Bison. The `newTreeNode(ExprKind kind)` function is a utility to create a tree node of type `kind` in the heap.
 
-After this scan and parse step, a syntax tree represents the lambda calculus expressions is ready for evaluation. In the [next]({% 2011-01-19-A-Simple-Lambda-Calculus-Evaluator-III %}) post, I will show you the evaluation part of this simple lambda calculus evaluator.
+After this scan and parse step, a syntax tree represents the lambda calculus expressions is ready for evaluation. In the [next]({% post_url 2011-01-19-A-Simple-Lambda-Calculus-Evaluator-III %}) post, I will show you the evaluation part of this simple lambda calculus evaluator.
