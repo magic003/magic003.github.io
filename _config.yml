@@ -1,2 +1,4 @@
 name: Minjie Zha
 pygments: true
+
+markdown: kramdown

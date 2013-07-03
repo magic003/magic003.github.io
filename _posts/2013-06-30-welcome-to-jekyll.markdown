@@ -5,6 +5,7 @@ date:   2013-06-30 00:09:26
 categories: jekyll update
 ---
 
+[previous]({% post_url 2010-07-29-北京城惜别故友-杭州市初遇新知 %})
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
 To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.
 
