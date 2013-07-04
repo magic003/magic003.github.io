@@ -173,7 +173,7 @@ code {
 }
 
 /* About */
-#about p {
+#about p, #projects p {
     margin: 20px 0;
     font-size: 17px;
 }
