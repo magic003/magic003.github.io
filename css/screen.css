@@ -172,6 +172,12 @@ code {
     color: red;
 }
 
+/* About */
+#about p {
+    margin: 20px 0;
+    font-size: 17px;
+}
+
 /* Posts */
 .post .date {
     font-size: 16px;
