@@ -5,7 +5,7 @@ title: Minjie Zha
 
 <section id="posts">
   <ul>
-    {% for post in site.posts %}
+    {% for post in site.posts limit: 20 %}
       <li>
         <span class="date">
         <time pubdate="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time>
